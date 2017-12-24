@@ -9,12 +9,12 @@ const config = require('./config');
 const { Message, OpType, Location } = require('../curve-thrift/line_types');
 //let exec = require('child_process').exec;
 
-const myBot = ['u5ee3f8b1c2783990512a02c14d312c89','u88551cb4b9ab9508138d5d35da962c9c'];
+const myBot = ['u972404a651763400b396b3f9caf6fc07','ua18e84b84b0ea266c10335585f57eb00','ue1095320f588026215611c37fc1c3316','u562b8907e60f483096c87b646415569f','u2348ab683a526e82d7ab3b60db7c6909','u3f2f024bfb418f735157dc53ea8ce64e'];
 const banList = [];//Banned list
 var groupList = new Array();//Group list
 var vx = {};var midnornama,pesane,kickhim;var waitMsg = "no";//DO NOT CHANGE THIS
 const imgArr = ['png','jpg','jpeg','gif','bmp','webp'];//DO NOT CHANGE THIS
-var komenTL = "AutoLike by GoogleX\nline://ti/p/~rakamastah"; //Comment for timeline
+var komenTL = "AutoLike by Doni\nline://ti/p/~doniagustian1"; //Comment for timeline
 var bcText = "Masukan teks untuk broadcast";
 var limitposts = '10'; //Output timeline post
 
@@ -173,7 +173,7 @@ class LINE extends LineAPI {
 		if(operation.type == 5 && this.stateStatus.salam == 1) {//someone adding me..
             let halo = new Message();
 			halo.to = operation.param1;
-			halo.text = "Creator: line://ti/p/~rakamastah (~GoogleX)";
+			halo.text = "Creator: line://ti/p/~Doniagustian1 (🔰One Piece Team🔰)";
 			this._client.sendMessage(0, halo);
         }
 
