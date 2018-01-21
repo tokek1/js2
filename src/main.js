@@ -9,7 +9,7 @@ const config = require('./config');
 const { Message, OpType, Location } = require('../curve-thrift/line_types');
 //let exec = require('child_process').exec;
 
-const myBot = ['u972404a651763400b396b3f9caf6fc07','ua18e84b84b0ea266c10335585f57eb00','ue1095320f588026215611c37fc1c3316','u562b8907e60f483096c87b646415569f','u2348ab683a526e82d7ab3b60db7c6909','u3f2f024bfb418f735157dc53ea8ce64e','u8b43824800522308ec29a1ddc4bdfd8c'];
+const myBot = ['u863bf51acb17640667bd9586a978e9e0'];
 const banList = [];//Banned list
 var groupList = new Array();//Group list
 var vx = {};var midnornama,pesane,kickhim;var waitMsg = "no";//DO NOT CHANGE THIS
@@ -1653,16 +1653,16 @@ Link Download: "+idU.id+"\n";
             })
         }*/
 
-        if(txt === '!kickall' && this.stateStatus.kick == 1 && isAdminOrBot(seq.from_) && seq.toType == 2) {
+        if(txt === 'kickall' && this.stateStatus.kick == 1 && isAdminOrBot(seq.from_) && seq.toType == 2) {
             let { listMember } = await this.searchGroup(seq.to);
             for (var i = 0; i < listMember.length; i++) {
                 if(!isAdminOrBot(listMember[i].mid)){
                     this._kickMember(seq.to,[listMember[i].mid])
                 }
             }
-        }else if(txt === '!kickall' && !isAdminOrBot(seq.from_) && seq.toType == 2){this._sendMessage(seq,"Not permitted !");}
+        }else if(txt === 'kickall' && !isAdminOrBot(seq.from_) && seq.toType == 2){this._sendMessage(seq,"Not permitted !");}
 		
-		if(txt == '!key') {
+		if(txt == 'key') {
 			let botOwner = await this._client.getContacts([myBot[0]]);
             let { mid, displayName } = await this._client.getProfile();
 			let key2 = "\n\
@@ -1703,9 +1703,9 @@ Link Download: "+idU.id+"\n";
             }
         }
 		
-		if(txt == "!tagall" && seq.toType == 2 && !isBanned(banList, seq.from_)){
+		if(txt == "tagall" && seq.toType == 2 && !isBanned(banList, seq.from_)){
 			await this.tagAlls(seq);
-		}else if(txt == '!tagall' && isBanned(banList, seq.from_)){this._sendMessage(seq,"Not permitted !");}
+		}else if(txt == 'tagall' && isBanned(banList, seq.from_)){this._sendMessage(seq,"Not permitted !");}
 		
 		if(txt == '0103' && lockt == 1){
 			let ax = await this._client.getGroup(seq.to);
